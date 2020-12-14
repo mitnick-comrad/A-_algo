@@ -16,9 +16,9 @@ import sqlite3
 import psycopg2
 import psycopg2.extras
 
-#DATABASE_URL = os.environ["postgres://ooyjrusfrzcrfe:283118bd613085e0e7cb2b828e94d06e3d23b304268f9c18d48f4cbd45ee752e@ec2-3-210-23-22.compute-1.amazonaws.com:5432/d6vh489ht8oj69"]
 
-conn= psycopg2.connect(dbname="dv6jrsqbauch3",user="pezqypcwxbbrku",password="24237c97827eb63cfbb3df3c23d84d4ac65d0bbc87b82a7fb4fef0882fc2ca85",host="ec2-52-202-22-140.compute-1.amazonaws.com",port="5432")
+
+conn= psycopg2.connect(dbname="dv6jrsqbauch3",user="pezqypcwxbbrku",password="password",host="ec2-52-202-22-140.compute-1.amazonaws.com",port="5432")
 cur= conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
 cur.execute("SELECT * FROM tag;")
 tag=cur.fetchall()
@@ -127,7 +127,7 @@ def bag_of_words(s, words):
   return numpy.array(bag)
 
 def chat():
-  #print("Lets talk")
+  
   
   
   while True:
@@ -149,6 +149,5 @@ def chat():
         print(random.choice([k for k in responses[1:] if k!=None]))
         break
       i=i+1
-#chat()
-#train()
+
 chat()
